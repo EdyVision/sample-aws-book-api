@@ -1,0 +1,10 @@
+{
+    "title": "This is a sample book",
+    "subtitle": "Some Subtitle",
+    "author_firstname": "John",
+    "author_lastname": "Doe",
+    "isbn": "987xxx",
+    "format": "ebook",
+    "description": "A book of some sort",
+    "price": "14.99"
+}

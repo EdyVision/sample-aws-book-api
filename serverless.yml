@@ -1,0 +1,40 @@
+
+service: sample-aws-books-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+  environment:
+    ENV_TYPE: "${self:provider.stage}"
+    DB_URL: "${env:DB_URL}"
+
+functions:
+  createBook:
+    handler: handler.createBook
+    events:
+      - http:
+          path: api/books/createBook
+          method: post
+  getBook:
+    handler: handler.getBook
+    events:
+      - http:
+          path: api/books/getBook
+          method: get
+  updateBook:
+    handler: handler.updateBook
+    events:
+      - http:
+          path: api/books/updateBook
+          method: put
+  deleteBook:
+    handler: handler.deleteBook
+    events:
+      - http:
+          path: api/books/deleteBook
+          method: delete
+
+plugins:
+  - serverless-offline

@@ -1,0 +1,9 @@
+{
+    "response": {
+        "message": "Successfully deleted book",
+        "results": {
+            "record_deleted": true,
+            "id": "5fe69e2eafc667ab6f9a6d45"
+        }
+    }
+}

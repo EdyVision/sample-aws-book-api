@@ -1,0 +1,11 @@
+{
+    "id": "5fe66a14979ecda5b31452cf",
+    "title": "Updated Sample Book",
+    "subtitle": "Some Subtitle",
+    "author_firstname": "John",
+    "author_lastname": "Doe",
+    "isbn": "987xxx",
+    "format": "ebook",
+    "description": "An upgraded book of some sort",
+    "price": "18.99"
+}

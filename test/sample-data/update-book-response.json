@@ -1,0 +1,9 @@
+{
+    "response": {
+        "message": "Successfully updated book",
+        "results": {
+            "record_updated": true,
+            "id": "5fe66a14979ecda5b31452cf"
+        }
+    }
+}

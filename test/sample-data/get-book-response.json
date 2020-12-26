@@ -1,0 +1,12 @@
+{
+    "response": {
+        "_id": "5fe66a14979ecda5b31452cf",
+        "title": "This is a sample book",
+        "subtitle": "Some Subtitle",
+        "description": "A book of some sort",
+        "isbn": "987xxx",
+        "format": "ebook",
+        "price": 14.99,
+        "__v": 0
+    }
+}
