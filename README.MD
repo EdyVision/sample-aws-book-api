@@ -1,4 +1,4 @@
-# Sample AWS Starter Project
-![Node.js CI](https://github.com/EdyVision/sample-aws-starter-project/workflows/Node.js%20CI/badge.svg)
+# Sample AWS Books API
+![.github/workflows/stage.yml](https://github.com/EdyVision/sample-aws-book-api/workflows/.github/workflows/stage.yml/badge.svg)
 
-A simple starter project with sample tests, CI/CD configuration for GitHub Actions and Travis CI, and some security configurations to lock down endpoints.
+A simple API that performs Create, Read, Update, and Delete against a table in MongoDB. Includes linting, GitHub Actions workflow, project structuring, and tests.
