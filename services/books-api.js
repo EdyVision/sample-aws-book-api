@@ -4,7 +4,6 @@
 const handlerUtil = require('../libs/utils/handler-util');
 const database = require('../db/db-manager');
 const BookModel = require('../db/models/book-model');
-// const AWS = require('aws-sdk');
 
 module.exports.createBook = (entry) => {
     return new Promise((resolve) => {
@@ -76,7 +75,7 @@ module.exports.getBook = (entry) => {
             bookSearchDetails = { isbn: entry.queryStringParameters.isbn };
         } else {
             resolve(
-                handlerUtil.formatHandlerResponse(404, {
+                handlerUtil.formatHandlerResponse(400, {
                     error: 'Unable to delete without ISBN or ID provided.'
                 })
             );

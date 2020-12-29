@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "6e3b2e1e-aa1b-40e9-aa79-a54fdd6f194d",
+		"name": "Books API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books api - POST Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"This is a sample book\",\n    \"subtitle\": \"Some Subtitle\",\n    \"author_firstname\": \"John\",\n    \"author_lastname\": \"Doe\",\n    \"isbn\": \"987xxx\",\n    \"format\": \"ebook\",\n    \"description\": \"A book of some sort\",\n    \"price\": \"14.99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/api/books/addBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"api",
+						"books",
+						"addBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books api - PUT Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"5fe66a14979ecda5b31452cf\",\n    \"title\": \"Updated Sample Books\",\n    \"subtitle\": \"Some Subtitle\",\n    \"author_firstname\": \"John\",\n    \"author_lastname\": \"Doe\",\n    \"isbn\": \"987xxx\",\n    \"format\": \"ebook\",\n    \"description\": \"An upgraded book of some sort\",\n    \"price\": \"18.99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/api/books/updateBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"api",
+						"books",
+						"updateBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books api - GET Get Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/api/books/getBook?id=5fe66a14979ecda5b31452cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"api",
+						"books",
+						"getBook"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "987xxx",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "5fe66a14979ecda5b31452cf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books api - DELETE Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/api/books/deleteBook?id=5fe69e2eafc667ab6f9a6d45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"api",
+						"books",
+						"deleteBook"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5fe69e2eafc667ab6f9a6d45"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -17,7 +17,8 @@ let book = {
     description: String,
     isbn: String,
     format: String,
-    price: Number
+    price: Number,
+    imageKey: String
 };
 
 const bookSchema = new Schema(book);

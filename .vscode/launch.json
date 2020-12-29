@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type":"node",
+            "request":"launch",
+            "name":"Serverless Offline Debug",
+            "program":"${workspaceRoot}/node_modules/.bin/sls",
+            "args":[
+                "offline",
+                "--noAuth"
+            ]
+        },
+        {
+            "name": "Debug Jest Tests",
+            "type": "node",
+            "request":"launch",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "args": [
+                "-i",
+                "--detectOpenHandles"
+            ],
+            "console": "integratedTerminal",
+            "port": 9229,
+            "env": {
+                "NODE_ENV": "test"
+            },
+          }
+    ]
+}

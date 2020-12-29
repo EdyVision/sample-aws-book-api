@@ -5,6 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "start": "sls offline --noAuth",
+    "test": "jest --coverage",
     "precommit": "eslint .",
     "pretest": "eslint --ignore-path .gitignore .",
     "linter": "eslint . --fix"
@@ -23,9 +24,11 @@
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
+    "jest": "^26.6.3",
+    "mockingoose": "^2.13.2",
     "prettier": "^2.2.1",
     "serverless-offline": "^6.8.0",
-    "jest": "^26.6.3"
+    "serverless-prune-plugin": "^1.4.3"
   },
   "dependencies": {
     "dotenv": "^8.2.0",

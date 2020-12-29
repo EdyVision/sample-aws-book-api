@@ -6,6 +6,8 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: us-east-1
+  # apiGateway: # Uncomment these two lines to enforce API Key Usage
+  #   apiKeySourceType: HEADER
   environment:
     ENV_TYPE: "${self:provider.stage}"
     DB_URL: "${env:DB_URL}"
@@ -17,24 +19,33 @@ functions:
       - http:
           path: api/books/createBook
           method: post
+          cors: true
+          # private: true # Uncomment this line to enforce API Key Usage
   getBook:
     handler: handler.getBook
     events:
       - http:
           path: api/books/getBook
           method: get
+          cors: true
+          # private: true # Uncomment this line to enforce API Key Usage
   updateBook:
     handler: handler.updateBook
     events:
       - http:
           path: api/books/updateBook
           method: put
+          cors: true
+          # private: true # Uncomment this line to enforce API Key Usage
   deleteBook:
     handler: handler.deleteBook
     events:
       - http:
           path: api/books/deleteBook
           method: delete
+          cors: true
+          # private: true # Uncomment this line to enforce API Key Usage
 
 plugins:
   - serverless-offline
+  - serverless-prune-plugin
