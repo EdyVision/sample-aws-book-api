@@ -21,10 +21,7 @@
                 "--detectOpenHandles"
             ],
             "console": "integratedTerminal",
-            "port": 9229,
-            "env": {
-                "NODE_ENV": "test"
-            },
+            "port": 9229
           }
     ]
 }

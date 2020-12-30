@@ -1,6 +1,7 @@
 # Sample AWS Books API
 ![Test and Deploy to Staging](https://github.com/EdyVision/sample-aws-book-api/workflows/Test%20and%20Deploy%20to%20Staging/badge.svg)
 
+
 A simple API that performs Create, Read, Update, and Delete against a table in MongoDB. Includes linting, GitHub Actions workflow, project structuring, and tests. This repository was created as part of an extended example for the book <em>Building Node.js serverless apps on AWS: A Brief Guide on Where to Start</em>. This project does not contain any auth setup like the <em>Serverless AWS Starter Project</em>. 
 
 
