@@ -13,9 +13,12 @@ const updateBookResponse = require('./sample-data/update-book-response.json');
 const deleteBookResponse = require('./sample-data/delete-book-response.json');
 
 describe('Book API Tests', () => {
+    console.error = jest.fn();
+
     beforeEach(() => {
         mockingoose.resetAll();
         jest.clearAllMocks();
+        console.error.mockClear();
     });
 
     it('should validate book record', async () => {
@@ -24,6 +27,24 @@ describe('Book API Tests', () => {
         await user.validate();
         expect(user.toObject()).toHaveProperty('title');
         expect(user.toObject()).toHaveProperty('_id');
+    });
+
+    it('should fail to create book record', async () => {
+        // Mock the db entries
+        mockingoose(Book).toReturn(new Error('My Error'), 'save');
+
+        // Event to pass to endpoint
+        let event = {
+            body: JSON.stringify(createBookRequest)
+        };
+
+        await handler.createBook(event).then(async (response) => {
+            // Assert
+            expect(response.statusCode).toBe(500);
+            expect(JSON.parse(response.body).error).toBe(
+                'Unable to save book. {}'
+            );
+        });
     });
 
     it('should create book record', async () => {
@@ -65,7 +86,7 @@ describe('Book API Tests', () => {
 
         await handler.updateBook(event).then(async (response) => {
             // Assert
-            expect(response.statusCode).toBe(202);
+            expect(response.statusCode).toBe(200);
             expect(JSON.parse(response.body).response.message).toBe(
                 updateBookResponse.response.message
             );
@@ -92,7 +113,7 @@ describe('Book API Tests', () => {
 
         await handler.deleteBook(event).then(async (response) => {
             // Assert
-            expect(response.statusCode).toBe(202);
+            expect(response.statusCode).toBe(200);
             expect(JSON.parse(response.body).response.message).toBe(
                 deleteBookResponse.response.message
             );

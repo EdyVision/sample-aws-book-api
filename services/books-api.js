@@ -104,7 +104,7 @@ module.exports.getBook = (entry) => {
                     }
                     if (book) {
                         resolve(
-                            handlerUtil.formatHandlerResponse(202, {
+                            handlerUtil.formatHandlerResponse(200, {
                                 response: book
                             })
                         );
@@ -160,7 +160,7 @@ module.exports.updateBook = (entry) => {
                     .then((response) => {
                         if (response.isbn) {
                             resolve(
-                                handlerUtil.formatHandlerResponse(202, {
+                                handlerUtil.formatHandlerResponse(200, {
                                     response: {
                                         message: 'Successfully updated book',
                                         results: {
@@ -232,7 +232,7 @@ module.exports.deleteBook = (entry) => {
                 BookModel.findOneAndDelete(bookQuery)
                     .then((response) => {
                         resolve(
-                            handlerUtil.formatHandlerResponse(202, {
+                            handlerUtil.formatHandlerResponse(200, {
                                 response: {
                                     message: 'Successfully deleted book',
                                     results: {
