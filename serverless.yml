@@ -49,3 +49,8 @@ functions:
 plugins:
   - serverless-offline
   - serverless-prune-plugin
+
+# Specify Ports (Optional)
+custom:
+  serverless-offline:
+    httpPort: 8000

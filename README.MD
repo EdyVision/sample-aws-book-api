@@ -44,3 +44,16 @@ npm start
 If running locally, the beginning of your url will be http://localhost:3000
 
 A sample Postman collection has been provided in the <strong>misc</strong> folder.
+
+## Leveraging Docker
+The Dockerfile in the repository uses an official Node image from Docker. To build the docker image with your project, run the following command:
+
+```bash
+docker build -t booksapi -f Dockerfile .
+```
+
+Then, to run the app along with a mongo container, run the following:
+
+```bash
+docker-compose up
+```
